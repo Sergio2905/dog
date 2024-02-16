@@ -141,17 +141,11 @@ body._lock {
   display: flex;
   align-items: center;
   color: #fff;
-}
-
-.header__logo span {
-  color: #fff;
-  font-size: 2.5rem;
+  width: 270px;
 }
 
 .header__logo img {
-  margin: 0 7px;
-  max-width: 66px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .menu__body {
@@ -358,7 +352,9 @@ body._lock {
   border-radius: 60px;
   padding: 10px 20px;
   transform: scale(0);
+  box-shadow: 6px 5px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
+  position: relative;
 }
 
 .main__link.active {
@@ -537,7 +533,6 @@ body._lock {
 .tokenomics__image {
   flex: 1 1 50%;
   position: relative;
-  transform: translate(-50px, 0);
   display: flex;
   align-items: flex-end;
 }
@@ -632,6 +627,37 @@ body._lock {
   flex: 1 1 100%;
 }
 
+.info__address .info__value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
+
+.info__address .info__value::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 70%);
+}
+
+.info__copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.info__copy svg {
+  width: 18px;
+  height: 18px;
+}
+
 .card {
   width: 170px;
   height: 180px;
@@ -645,6 +671,7 @@ body._lock {
   padding: 15px;
   transform: scale(0);
   transition: all 0.5s ease;
+  color: #000;
 }
 
 .card.active {
@@ -716,15 +743,8 @@ body._lock {
   color: #fff;
 }
 
-.footer__logo span {
-  color: #fff;
-  font-size: 2.5rem;
-}
-
 .footer__logo img {
-  margin: 0 7px;
-  max-width: 66px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .footer__rights {
@@ -761,6 +781,10 @@ body._lock {
 }
 
 @media (max-width: 1440px) {
+  .header__logo {
+    width: calc(170px + 100 * (100vw - 320px) / 1120);
+  }
+
   .menu__list:not(:last-child) {
     margin-right: calc(20px + 20 * (100vw - 320px) / 1120);
   }
@@ -863,14 +887,6 @@ body._lock {
     font-size: calc(1rem + 6 * (100vw - 20rem) / 1120);
   }
 
-  .footer__logo span {
-    font-size: calc(1.875rem + 10 * (100vw - 20rem) / 1120);
-  }
-
-  .footer__logo img {
-    max-width: calc(38px + 28 * (100vw - 320px) / 1120);
-  }
-
   .footer__rights {
     font-size: calc(0.75rem + 4 * (100vw - 20rem) / 1120);
   }
@@ -932,6 +948,10 @@ body._lock {
     bottom: 30%;
   }
 
+  .tokenomics__wrapper {
+    padding-top: 20px;
+  }
+
   .tokenomics__body {
     flex-direction: column;
   }
@@ -971,6 +991,10 @@ body._lock {
     height: 34px;
   }
 
+  .about {
+    padding-top: 85px;
+  }
+
   .about__body {
     flex-direction: column-reverse;
   }
@@ -991,6 +1015,7 @@ body._lock {
 
   .about__info {
     margin-bottom: 30px;
+    padding: 0 20px;
   }
 }
 
@@ -1014,10 +1039,11 @@ body._lock {
 
   .main__link:hover {
     background: rgba(103, 255, 156, 0.862745098);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
   }
 
   .card:hover {
-    transform: scale(1) translate(0, -10px);
+    background: rgba(103, 255, 156, 0.862745098);
+    box-shadow: none;
   }
 }
