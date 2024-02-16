@@ -181,6 +181,7 @@ body._lock {
   font-size: 1.375rem;
   font-weight: 600;
   color: #fff;
+  transition: all 0.5s ease;
 }
 
 .menu__btn {
@@ -192,6 +193,7 @@ body._lock {
   border: 2px solid #fff;
   padding: 10px 20px;
   display: block;
+  transition: all 0.5s ease;
 }
 
 .main {
@@ -356,6 +358,7 @@ body._lock {
   border-radius: 60px;
   padding: 10px 20px;
   transform: scale(0);
+  transition: all 0.5s ease;
 }
 
 .main__link.active {
@@ -641,6 +644,7 @@ body._lock {
   justify-content: space-between;
   padding: 15px;
   transform: scale(0);
+  transition: all 0.5s ease;
 }
 
 .card.active {
@@ -993,5 +997,27 @@ body._lock {
 @media (max-width: 480px) {
   .main__footer {
     padding: 0 20px;
+  }
+}
+
+@media (any-hover: hover) {
+  .menu__link:hover {
+    color: #67FF9C;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .menu__btn:hover {
+    color: #67FF9C;
+    border: 2px solid #67FF9C;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .main__link:hover {
+    background: rgba(103, 255, 156, 0.862745098);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .card:hover {
+    transform: scale(1) translate(0, -10px);
   }
 }
