@@ -533,6 +533,7 @@ body._lock {
 .tokenomics__image {
   flex: 1 1 50%;
   position: relative;
+  pointer-events: none;
   display: flex;
   align-items: flex-end;
 }
